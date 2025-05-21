@@ -2,3 +2,5 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://sokkhannpol02:qxICaW3LR17xHWlz@cluster1.osiqajg.mongodb.net/ecomerce-microservice?retryWrites=true&w=majority&appName=Cluster1
+    config:
+      refresh-test: OldValue

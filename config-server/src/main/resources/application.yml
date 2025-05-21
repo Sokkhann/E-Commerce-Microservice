@@ -3,12 +3,15 @@ server:
 
 spring:
   application:
-    name: configuration server
+    name: config-server
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/Sokkhann/E-Commerce-Microservice/config-server  # Or remote Git URL
+          uri: https://github.com/Sokkhann/E-Commerce-Microservice.git
+          search-paths: file-configuration  # Subdirectory where config files are stored
+          clone-on-start: true
+          default-label: main
 
 eureka:
   client:
