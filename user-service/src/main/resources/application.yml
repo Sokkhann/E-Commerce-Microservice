@@ -1,13 +1,11 @@
-server:
-  port: 8081
-
 spring:
+  config:
+    import: optional:configserver:http://localhost:8888
   application:
     name: user-service
 
-  data:
-    mongodb:
-      uri: mongodb+srv://sokkhannpol02:qxICaW3LR17xHWlz@cluster1.osiqajg.mongodb.net/ecomerce-microservice?retryWrites=true&w=majority&appName=Cluster1
+server:
+  port: 8081
 
 eureka:
   client:
