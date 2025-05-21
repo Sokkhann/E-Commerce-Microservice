@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+
+  data:
+    mongodb:
+      uri: mongodb+srv://sokkhannpol02:qxICaW3LR17xHWlz@cluster1.osiqajg.mongodb.net/ecomerce-microservice?retryWrites=true&w=majority&appName=Cluster1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
