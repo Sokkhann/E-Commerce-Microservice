@@ -15,6 +15,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/token")
+    public String token(@RequestHeader("Authorization") String auth) {
+        return auth;
+    }
+
     @GetMapping
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
