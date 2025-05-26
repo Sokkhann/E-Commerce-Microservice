@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -14,6 +15,11 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello User Service!";
+    }
 
     @GetMapping("/token")
     public String token(@RequestHeader("Authorization") String auth) {
@@ -38,5 +44,15 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
+    }
+
+    @GetMapping("/me")
+    public Principal getMe(Principal principal) {
+        return principal;
+    }
+
+    @GetMapping("/debug-token")
+    public String debugToken() {
+        return "Token accepted by user-service";
     }
 }
