@@ -37,7 +37,7 @@ spring:
             - StripPrefix=1
             - name: IdTokenRelay
 
-        
+        # product-service API route
         - id: product-service-api
           uri: lb://product-service
           predicates:
