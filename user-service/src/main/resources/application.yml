@@ -9,11 +9,13 @@ spring:
     allowed-methods: "*"
   config:
     import: optional:configserver:http://localhost:8888
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8090/realms/spring-realm
+  spring:
+#    security:
+#      oauth2:
+#        resourceserver:
+#          jwt:
+#            issuer-uri: http://localhost:8090/auth/realms/spring-realm
+#            jwk-set-uri: http://localhost:8090/auth/realms/spring-realm/protocol/openid-connect/certs
 
 eureka:
   client:

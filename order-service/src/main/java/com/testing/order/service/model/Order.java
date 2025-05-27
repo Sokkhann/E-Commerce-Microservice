@@ -1,16 +1,14 @@
 package com.testing.order.service.model;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
-
+@Document(collection = "users")
+@Data
 public class Order {
     @Id
     private String id;
-    private String userId;       // from user-service
-    private String productId;    // from product-service
-    private int quantity;
-    private double totalPrice;
-    private String status;       // e.g., "PLACED", "SHIPPED", "CANCELLED"
-    private LocalDateTime orderDate;
+    private String name;
+    private String email;
 }

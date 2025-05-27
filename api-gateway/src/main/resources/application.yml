@@ -15,15 +15,15 @@ spring:
             provider: keycloak
             redirect-uri: "http://localhost:8080/login/oauth2/code/keycloak"
             authorization-grant-type: authorization_code
-            scope: openid, profile, email
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:8090/realms/spring-realm
+            scope: openid, profile, email, roles
+#        provider:
+#          keycloak:
+#            issuer-uri: http://localhost:8090/realms/spring-realm
 
   cloud:
     gateway:
-      default-filters:
-        - TokenRelay
+#      default-filters:
+#        - TokenRelay
       routes:
         # user-service API route
         - id: user-service-api
@@ -32,7 +32,7 @@ spring:
             - Path=/api/users/**
           filters:
             - StripPrefix=1
-            - name: IdTokenRelay
+#            - name: IdTokenRelay
 
         # product-service API route
         - id: product-service-api
@@ -41,7 +41,7 @@ spring:
             - Path=/api/products/**
           filters:
             - StripPrefix=1
-            - name: IdTokenRelay
+#            - name: IdTokenRelay
 
 eureka:
   client:
